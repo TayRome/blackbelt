@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "BlackBelt: Bright Ideas - UserInfo";
+}
+<br>
+<br>
+<a href="/bright_ideas">Bright Ideas</a> 
+<br>
+<a href="/logout">Logout</a>
+<br>
+<br>
+<br>
+<ul>
+  <li>Name: @ViewBag.SelectedUser.UserName</li>
+  <li>Alias: @ViewBag.SelectedUser.UserAlias</li>
+  <li>Email: @ViewBag.SelectedUser.Email</li>
+</ul>
+<hr>
+<p>Total number of Ideas: @ViewBag.SelectedUser.UsersIdeas.Count</p>
+<p>Total number of Likes given: @ViewBag.SelectedUser.UserLikes.Count</p>

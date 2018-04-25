@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "BlackBelt: Bright Ideas - IdeaInfo";
+}
+<br>
+<a href="/bright_ideas">Bright Ideas</a> 
+<br>
+<a href="/logout">Logout</a>
+<br>
+<br>
+<h3><a href="/users/@ViewBag.SelectedIdea.Owner.UserId">@ViewBag.SelectedIdea.Owner.UserAlias</a> says:</h3>
+<p>@ViewBag.SelectedIdea.UserIdea</p>
+
+<h3>People who are like you and have liked this idea:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Alias</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  @{
+    foreach (var like in ViewBag.LikedBy)
+    {
+      <tr>
+        <td><a href="/users/@like.User.UserId">@like.User.UserAlias</a></td>
+        <td>@like.User.UserName</td>
+      </tr>
+    }
+  }
+  </tbody>
+</table>
